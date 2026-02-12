@@ -1,10 +1,128 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Hello World</title>
-  </head>
-  <body>
-    <h1>Hello, world!</h1>
-    <p>This site is running on Azure Static Web Apps. test</p>
-  </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conley Concrete Construction</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        /* NAVIGATION */
+        header {
+            background: #222;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 80px;
+        }
+
+        nav a {
+            color: white;
+            margin-left: 25px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+            nav a:hover {
+                text-decoration: underline;
+            }
+
+        /* HERO SECTION */
+        .hero {
+            background: url('assets/Logo1.jpg') center/cover no-repeat;
+            height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 20px;
+            position: relative;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.45);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .bbb-badge {
+            margin-top: 20px;
+            background: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            display: inline-block;
+            color: #333;
+            font-size: 14px;
+        }
+
+            .bbb-badge a {
+                color: #0066cc;
+                text-decoration: none;
+            }
+
+                .bbb-badge a:hover {
+                    text-decoration: underline;
+                }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <header>
+        <div class="logo">
+            <img src="assets/Logo1.jpg" alt="Conley Concrete Construction Logo">
+        </div>
+
+        <nav>
+            <a href="#">HOME</a>
+            <a href="#">CONCRETE</a>
+            <a href="#">CONSTRUCTION</a>
+            <a href="#">TRUCKING</a>
+            <a href="#">PHOTO GALLERY</a>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <h1>Concrete, Post-Frame Construction, and Trucking Services from a name you can trust.</h1>
+
+            <div class="bbb-badge">
+                BBB Rating: A+ (As of 2/12/2026) —
+                <a href="#">Click for Profile</a>
+            </div>
+        </div>
+    </section>
+
+</body>
 </html>
