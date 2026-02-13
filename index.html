@@ -158,8 +158,6 @@
                 .bbb-badge a:hover {
                     text-decoration: underline;
                 }
-
-
     </style>
 </head>
 
@@ -213,6 +211,26 @@
         </div>
 
     </section>
+    <section class="contact-section">
+        <h2>Contact Us</h2>
+        <p>Submit a contact request below for more information on any of our concrete, construction, or trucking services.</p>
+
+        <form id="contactForm">
+            <div class="form-row">
+                <input type="text" name="firstName" placeholder="First Name*" required>
+                <input type="text" name="lastName" placeholder="Last Name*" required>
+            </div>
+
+            <input type="email" name="email" placeholder="Email Address*" required>
+            <input type="tel" name="phone" placeholder="Phone Number*" required>
+
+            <textarea name="message" placeholder="Nature of Your Request*" required></textarea>
+
+            <button type="submit">Submit Your Request</button>
+        </form>
+
+        <div id="formStatus"></div>
+    </section>
 
 
 </body>
@@ -220,3 +238,22 @@
 
 
 </html>
+
+<script>
+    document.getElementById("contactForm").addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(e.target);
+        const data = Object.fromEntries(formData);
+
+        const response = await fetch("/api/sendEmail", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data)
+        });
+
+        const result = await response.text();
+        document.getElementById("formStatus").innerText = result;
+    });
+</script>
+
