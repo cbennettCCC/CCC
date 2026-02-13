@@ -34,8 +34,12 @@ ${message}
         await transporter.sendMail(mailOptions);
         context.res = { body: "Your request has been submitted successfully." };
     } catch (err) {
-        context.res = { status: 500, body: "Error sending email." };
-        context.log(err);
+        context.log(err); // still logs if Azure ever shows logs
+        context.res = {
+            status: 500,
+            body: `Error: ${err.message}`
+        };
+
 
     }
 };
