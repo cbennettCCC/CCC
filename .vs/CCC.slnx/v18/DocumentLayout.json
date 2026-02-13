@@ -3,16 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\jcale\\source\\repos\\cbennettCCC\\CCC\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jcale\\source\\repos\\cbennettCCC\\CCC\\api\\sendEmail\\index.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:api\\sendEmail\\index.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jcale\\source\\repos\\cbennettCCC\\CCC\\api\\sendEmail\\function.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:api\\sendEmail\\function.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jcale\\source\\repos\\cbennettCCC\\CCC\\api\\package.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:api\\package.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jcale\\source\\repos\\cbennettCCC\\CCC\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +14,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,41 +22,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "function.json",
-              "DocumentMoniker": "C:\\Users\\jcale\\source\\repos\\cbennettCCC\\CCC\\api\\sendEmail\\function.json",
-              "RelativeDocumentMoniker": "api\\sendEmail\\function.json",
-              "ToolTip": "C:\\Users\\jcale\\source\\repos\\cbennettCCC\\CCC\\api\\sendEmail\\function.json",
-              "RelativeToolTip": "api\\sendEmail\\function.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-02-13T05:13:58.158Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "index.js",
-              "DocumentMoniker": "C:\\Users\\jcale\\source\\repos\\cbennettCCC\\CCC\\api\\sendEmail\\index.js",
-              "RelativeDocumentMoniker": "api\\sendEmail\\index.js",
-              "ToolTip": "C:\\Users\\jcale\\source\\repos\\cbennettCCC\\CCC\\api\\sendEmail\\index.js",
-              "RelativeToolTip": "api\\sendEmail\\index.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2026-02-13T04:50:38.607Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "package.json",
-              "DocumentMoniker": "C:\\Users\\jcale\\source\\repos\\cbennettCCC\\CCC\\api\\package.json",
-              "RelativeDocumentMoniker": "api\\package.json",
-              "ToolTip": "C:\\Users\\jcale\\source\\repos\\cbennettCCC\\CCC\\api\\package.json",
-              "RelativeToolTip": "api\\package.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-02-13T04:48:12.123Z",
+              "Title": "index.html",
+              "DocumentMoniker": "C:\\Users\\jcale\\source\\repos\\cbennettCCC\\CCC\\index.html",
+              "RelativeDocumentMoniker": "index.html",
+              "ToolTip": "C:\\Users\\jcale\\source\\repos\\cbennettCCC\\CCC\\index.html",
+              "RelativeToolTip": "index.html",
+              "ViewState": "AgIAANgAAAAAAAAAAAAAAPIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2026-02-13T14:23:32.303Z",
               "EditorCaption": ""
             }
           ]
