@@ -119,30 +119,57 @@
 
         /* HERO SECTION */
         .hero {
+            background: url('assets/vanwinkle.jpg') center/cover no-repeat;
+            height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 20px;
             position: relative;
-            height: 100vh;
-            overflow: hidden;
         }
 
-        .hero-bg {
+        .hero-overlay {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
-            height: 120vh; /* slightly larger for smooth movement */
-            background-image: url('assets/vanwinkle.jpg');
-            background-size: cover;
-            background-position: center;
-            will-change: transform; /* GPU acceleration */
+            height: 100%;
+            background: rgba(0,0,0,0.45);
         }
 
         .hero-content {
             position: relative;
             z-index: 2;
-            color: white;
-            text-align: center;
-            padding-top: 35vh;
+            max-width: 800px;
         }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .bbb-badge {
+            margin-top: 20px;
+            background: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            display: inline-block;
+            color: #333;
+            font-size: 14px;
+        }
+
+            .bbb-badge a {
+                color: #0066cc;
+                text-decoration: none;
+            }
+
+                .bbb-badge a:hover {
+                    text-decoration: underline;
+                }
 
 
     </style>
@@ -209,21 +236,3 @@
 
 
 </html>
-<script>
-    const bg = document.querySelector('.hero-bg');
-    let latestScroll = 0;
-    let ticking = false;
-
-    window.addEventListener('scroll', () => {
-        latestScroll = window.scrollY;
-        if (!ticking) {
-            window.requestAnimationFrame(() => {
-                const offset = latestScroll * 0.25; // adjust speed here
-                bg.style.transform = `translateY(${offset}px)`;
-                ticking = false;
-            });
-            ticking = true;
-        }
-    });
-
-</script>
