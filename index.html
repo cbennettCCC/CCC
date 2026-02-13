@@ -158,6 +158,114 @@
                 .bbb-badge a:hover {
                     text-decoration: underline;
                 }
+
+
+
+        :root {
+            --construction-orange: #cf4a1b;
+            --footer-bg: #1a1a1a;
+            --footer-text: #e6e6e6;
+        }
+
+        .ccc-footer {
+            background: var(--footer-bg);
+            color: var(--footer-text);
+            padding: 2.5rem 1rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .ccc-footer-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--construction-orange);
+            margin-bottom: 0.5rem;
+        }
+
+        .ccc-footer-contact {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+            margin: 0.75rem 0 1.25rem;
+        }
+
+        .ccc-footer-link {
+            color: var(--footer-text);
+            text-decoration: none;
+            font-size: 1.05rem;
+            transition: color 0.2s ease;
+        }
+
+            .ccc-footer-link:hover {
+                color: var(--construction-orange);
+            }
+
+        .ccc-footer-copy {
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+
+        :root {
+            --construction-orange: #cf4a1b; /* C.C.C. orange */
+            --bg-image: url('https://images.unsplash.com/photo-1523419409543-3f3b9a1b5f7f?q=80&w=1600&auto=format&fit=crop');
+            --text-on-dark: #ffffff;
+            --card-bg: rgba(0,0,0,0.45);
+            --card-border: rgba(255,255,255,0.18);
+        }
+
+        .about-ccc {
+            position: relative;
+            color: var(--text-on-dark);
+            padding: 6rem 1.25rem;
+            background: var(--bg-image) center/cover no-repeat;
+        }
+
+        .about-ccc__overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(0,0,0,.6), rgba(0,0,0,.6));
+        }
+
+        .about-ccc__inner {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+            background: var(--card-bg);
+            padding: 2rem 2.5rem;
+            border-radius: 14px;
+            backdrop-filter: blur(6px);
+            border: 1px solid var(--card-border);
+        }
+
+        .about-ccc__title {
+            font-size: 3rem;
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+
+        /* Old English style */
+        .blackletter {
+            font-family: "UnifrakturCook", serif;
+            font-weight: 700;
+        }
+
+        /* Construction orange C.C.C. */
+        .orange-ccc {
+            color: var(--construction-orange);
+            text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+        }
+
+        .about-ccc__lead,
+        .about-ccc__body {
+            font-size: 1.125rem;
+            line-height: 1.65;
+            color: #f1f1f1;
+        }
+
+
     </style>
 </head>
 
@@ -211,26 +319,47 @@
         </div>
 
     </section>
-    <section class="contact-section">
-        <h2>Contact Us</h2>
-        <p>Submit a contact request below for more information on any of our concrete, construction, or trucking services.</p>
 
-        <form id="contactForm">
-            <div class="form-row">
-                <input type="text" name="firstName" placeholder="First Name*" required>
-                <input type="text" name="lastName" placeholder="Last Name*" required>
+    <section id="about-ccc" class="bout-ccc">
+    <div class="about-ccc__overlay"></div>
+
+    <div class="about-ccc__inner" role="region" aria-labelledby="about-ccc-title">
+        <h2 id="about-ccc-title" class="about-ccc__title">
+            About <span class="blackletter orange-ccc">C.C.C.</span>
+        </h2>
+
+        <p class="about-ccc__lead">
+            Conley Concrete &amp; Construction began operations in 2007. We specialize in
+            residential, commercial, industrial, and agricultural concrete flatwork and wall work,
+            decorative concrete, post‑frame construction as an authorized Wick Buildings dealer,
+            excavation, and trucking.
+        </p>
+
+        <p class="about-ccc__body">
+            Every project is driven by our commitment to safety, schedule, and craftsmanship.
+            From foundations and slabs to decorative finishes and full post‑frame builds, our team
+            delivers durable, high‑quality results built to last. Please consider us for your next
+            concrete or construction project.
+        </p>
+    </div>
+    </section>
+
+    <footer class="ccc-footer">
+        <div class="ccc-footer-inner">
+            <p class="ccc-footer-title">Conley Concrete & Construction</p>
+
+            <div class="ccc-footer-contact">
+                <a href="mailto:info@conleycc.com" class="ccc-footer-link">
+                    📧 info@conleycc.com
+                </a>
+                <a href="tel:3093680143" class="ccc-footer-link">
+                    📞 309‑368‑0143
+                </a>
             </div>
 
-            <input type="email" name="email" placeholder="Email Address*" required>
-            <input type="tel" name="phone" placeholder="Phone Number*" required>
-
-            <textarea name="message" placeholder="Nature of Your Request*" required></textarea>
-
-            <button type="submit">Submit Your Request</button>
-        </form>
-
-        <div id="formStatus"></div>
-    </section>
+            <p class="ccc-footer-copy">© 2026 Conley Concrete & Construction. All rights reserved.</p>
+        </div>
+    </footer>
 
 
 </body>
