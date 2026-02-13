@@ -119,47 +119,32 @@
 
         /* HERO SECTION */
         .hero {
-            background: url('assets/vanwinkle.jpg') center/cover no-repeat;
-            height: 70vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
-            padding: 20px;
             position: relative;
+            height: 100vh;
             overflow: hidden;
         }
 
-            .hero.parallax {
-                background-attachment: scroll;
-                background-position: center;
-                background-size: cover;
-                transition: background-position 0.1s linear;
-            }
-
-
-        
-
-        .bbb-badge {
-            margin-top: 20px;
-            background: white;
-            padding: 10px 20px;
-            border-radius: 6px;
-            display: inline-block;
-            color: #333;
-            font-size: 14px;
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 120vh; /* slightly larger for smooth movement */
+            background-image: url('assets/vanwinkle.jpg');
+            background-size: cover;
+            background-position: center;
+            will-change: transform; /* GPU acceleration */
         }
 
-            .bbb-badge a {
-                color: #0066cc;
-                text-decoration: none;
-            }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            color: white;
+            text-align: center;
+            padding-top: 35vh;
+        }
 
-                .bbb-badge a:hover {
-                    text-decoration: underline;
-                }
+
     </style>
 </head>
 
@@ -190,11 +175,6 @@
 
         <div class="hero-content">
             <h1>Concrete, Post-Frame Construction, and Trucking Services from a name you can trust.</h1>
-
-            <div class="bbb-badge">
-                BBB Rating: A+ (As of 2/12/2026) —
-                <a href="#">Click for Profile</a>
-            </div>
         </div>
         <div class="bbb-badge">
             <a href="https://www.bbb.org/us/il/knoxville/profile/concrete-contractors/conley-concrete-construction-ccc-0724-1000010063/#sealclick"
@@ -230,9 +210,20 @@
 
 </html>
 <script>
-    document.addEventListener('scroll', () => {
-        const hero = document.querySelector('.hero');
-        const offset = window.pageYOffset;
-        hero.style.backgroundPositionY = offset * 0.4 + 'px';
+    const bg = document.querySelector('.hero-bg');
+    let latestScroll = 0;
+    let ticking = false;
+
+    window.addEventListener('scroll', () => {
+        latestScroll = window.scrollY;
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                const offset = latestScroll * 0.25; // adjust speed here
+                bg.style.transform = `translateY(${offset}px)`;
+                ticking = false;
+            });
+            ticking = true;
+        }
     });
+
 </script>
