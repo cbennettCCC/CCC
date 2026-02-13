@@ -35,5 +35,7 @@ ${message}
         context.res = { body: "Your request has been submitted successfully." };
     } catch (err) {
         context.res = { status: 500, body: "Error sending email." };
+        context.log(err);
+
     }
 };
