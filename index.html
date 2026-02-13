@@ -6,6 +6,47 @@
     <title>Conley Concrete Construction</title>
 
     <style>
+        .featured-video {
+            max-width: 1100px;
+            margin: 60px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%; /* 16:9 ratio */
+        }
+
+        .video-frame {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        }
+
+            .video-frame iframe {
+                width: 100%;
+                height: 100%;
+            }
+
+        .video-caption h2 {
+            margin-top: 24px;
+            font-size: 2rem;
+            font-weight: 600;
+        }
+
+        .video-caption p {
+            margin-top: 8px;
+            font-size: 1.1rem;
+            color: #555;
+        }
+
         body {
             margin: 0;
             font-family: Arial, sans-serif;
@@ -139,6 +180,23 @@
             </div>
         </div>
     </section>
+    <section class="featured-video">
+        <div class="video-wrapper">
+            <div class="video-frame">
+                <iframe src="https://player.vimeo.com/video/947087392?h=share&title=0&byline=0&portrait=0"
+                        frameborder="0"
+                        allow="autoplay; fullscreen; picture-in-picture"
+                        allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+
+        <div class="video-caption">
+            <h2>Post-Frame Site Work</h2>
+            <p>Watch our crew prepare, grade, and set the foundation for a precision-built post-frame structure.</p>
+        </div>
+    </section>
+
 
 </body>
 </html>
