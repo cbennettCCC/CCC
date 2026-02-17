@@ -22,7 +22,7 @@
         @media (max-width: 600px) {
             .bbb-badge img {
                 width: 110px;
-            } 
+            }
         }
 
         .featured-video {
@@ -125,7 +125,6 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.45);
         }
 
         .hero-content {
@@ -242,10 +241,10 @@
         }
 
         /* Old English style */
-        .blackletter {
+        /*.blackletter {
             font-family: "UnifrakturCook", serif;
             font-weight: 700;
-        }
+        }*/
 
         /* Construction orange C.C.C. */
         .orange-ccc {
@@ -260,6 +259,23 @@
             color: #f1f1f1;
         }
 
+
+        .ccc-footer-social {
+            margin-top: 15px;
+            display: flex;
+            gap: 18px;
+            justify-content: center;
+        }
+
+        .social-icon svg {
+            color: var(--construction-orange);
+            transition: 0.2s ease-in-out;
+        }
+
+        .social-icon:hover svg {
+            transform: scale(1.15);
+            filter: drop-shadow(0 0 6px var(--construction-orange));
+        }
 
     </style>
 </head>
@@ -316,45 +332,66 @@
     </section>
 
     <section id="about-ccc" class="bout-ccc">
-    <div class="about-ccc__overlay"></div>
+        <div class="about-ccc__overlay"></div>
 
-    <div class="about-ccc__inner" role="region" aria-labelledby="about-ccc-title">
-        <h2 id="about-ccc-title" class="about-ccc__title">
-            About <span class="blackletter orange-ccc">C.C.C.</span>
-        </h2>
+        <div class="about-ccc__inner" role="region" aria-labelledby="about-ccc-title">
+            <h2 id="about-ccc-title" class="about-ccc__title">
+                About <span class="blackletter orange-ccc">𝕮.𝕮.𝕮</span>
+            </h2>
 
-        <p class="about-ccc__lead">
-            Conley Concrete &amp; Construction began operations in 2007. We specialize in
-            residential, commercial, industrial, and agricultural concrete flatwork and wall work,
-            decorative concrete, post‑frame construction as an authorized Wick Buildings dealer,
-            excavation, and trucking.
-        </p>
+            <p class="about-ccc__lead">
+                Conley Concrete &amp; Construction began operations in 2007. We specialize in
+                residential, commercial, industrial, and agricultural concrete flatwork and wall work,
+                decorative concrete, post‑frame construction as an authorized Wick Buildings dealer,
+                excavation, and trucking.
+            </p>
 
-        <p class="about-ccc__body">
-            Every project is driven by our commitment to safety, schedule, and craftsmanship.
-            From foundations and slabs to decorative finishes and full post‑frame builds, our team
-            delivers durable, high‑quality results built to last. Please consider us for your next
-            concrete or construction project.
-        </p>
-    </div>
+            <p class="about-ccc__body">
+                Every project is driven by our commitment to safety, schedule, and craftsmanship.
+                From foundations and slabs to decorative finishes and full post‑frame builds, our team
+                delivers durable, high‑quality results built to last. Please consider us for your next
+                concrete or construction project.
+            </p>
+        </div>
     </section>
+
 
     <footer class="ccc-footer">
         <div class="ccc-footer-inner">
-            <p class="ccc-footer-title">Conley Concrete & Construction</p>
+            <p class="ccc-footer-title">Conley Concrete &amp; Construction</p>
 
             <div class="ccc-footer-contact">
-                <a href="mailto:info@conleycc.com" class="ccc-footer-link">
-                    📧 info@conleycc.com
+                <a href="mailto:info@conleycc.com" class="ccc-footer-link">info@conleycc.com</a>
+                <a href="tel:3093680143" class="ccc-footer-link">309‑368‑0143</a>
+            </div>
+
+            <!-- Social Icons -->
+            <div class="ccc-footer-social">
+                <a href="https://www.facebook.com/ConleyConcrete" class="social-icon" target="_blank" aria-label="Facebook">
+                    <!-- Facebook SVG -->
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M22 12a10 10 0 1 0-11.5 9.9v-7H8v-3h2.5V9.5c0-2.5 1.5-3.9 3.8-3.9
+                    1.1 0 2.2.2 2.2.2v2.4H15c-1.2 0-1.6.8-1.6 1.6V12H17l-.4 3h-2.8v7A10 10 0 0 0 22 12z" />
+                    </svg>
                 </a>
-                <a href="tel:3093680143" class="ccc-footer-link">
-                    📞 309‑368‑0143
+
+                <a href="https://www.instagram.com/conley_concrete_construction/" class="social-icon" target="_blank" aria-label="Instagram">
+                    <!-- Instagram SVG -->
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2
+                    5-5V7c0-2.8-2.2-5-5-5H7zm10 2c1.7 0 3 1.3 3 3v10c0
+                    1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3V7c0-1.7 1.3-3 3-3h10zm-5
+                    3.3A4.8 4.8 0 1 0 16.8 12 4.8 4.8 0 0 0 12 7.3zm0 7.8A3
+                    3 0 1 1 15 12a3 3 0 0 1-3 3zm4.9-8.9a1.1 1.1 0 1 0
+                    1.1 1.1 1.1 1.1 0 0 0-1.1-1.1z" />
+                    </svg>
                 </a>
             </div>
 
-            <p class="ccc-footer-copy">© 2026 Conley Concrete & Construction. All rights reserved.</p>
+            <p class="ccc-footer-copy">© 2026 Conley Concrete &amp; Construction. All rights reserved.</p>
         </div>
     </footer>
+
 
 
 </body>
