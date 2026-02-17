@@ -1,14 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Favicon: 𝕮 on construction/safety orange -->
-    <!-- Transparent favicon: orange 𝕮 -->
     <link rel="icon" type="image/svg+xml"
-          href="data:image/svg+xml;utf8,
-    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'>
-        <text x='50%' y='50%' dominant-baseline='central' text-anchor='middle'
-              font-size='44' fill='%23FF4F00'>𝕮</text>
-    </svg>">
+          href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Ctext%20x='50%25'%20y='50%25'%20dominant-baseline='central'%20text-anchor='middle'%20font-size='44'%20fill='%23FF4F00'%3E%F0%9D%95%AE%3C/text%3E%3C/svg%3E">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Conley Concrete Construction</title>
@@ -277,6 +271,133 @@
             transform: scale(1.15);
             filter: drop-shadow(0 0 6px var(--construction-orange));
         }
+
+
+        /* =======================
+   MOBILE-ONLY TWEAKS
+   (desktop remains unchanged)
+   ======================= */
+        @media (max-width: 600px) {
+            /* Banner */
+            .wip-banner {
+                font-size: 15px;
+                padding: 10px 8px;
+            }
+
+            /* Header / Logo */
+            header {
+                padding: 16px 0;
+            }
+
+            .logo img {
+                height: 90px; /* smaller logo on phones */
+                margin-bottom: 10px;
+            }
+
+            /* Nav becomes stacked and tappable */
+            nav {
+                flex-wrap: wrap;
+                gap: 12px;
+                justify-content: center;
+                padding: 0 12px;
+            }
+
+                nav a {
+                    font-size: 16px;
+                    padding: 8px 10px;
+                    background: #f7f7f7;
+                    border-radius: 8px;
+                }
+
+            /* Hero: keep your desktop 70vh; only relax on phones */
+            .hero {
+                height: auto; /* allow content to dictate height on phones */
+                min-height: 55vh; /* still gives presence */
+                padding: 32px 16px;
+            }
+
+                .hero h1 {
+                    font-size: 28px; /* readable on phones */
+                    margin-top: 0; /* remove large negative offset on phones */
+                    line-height: 1.25;
+                }
+
+            /* BBB badge: scale down a touch */
+            .bbb-section {
+                padding: 12px 0;
+            }
+
+                .bbb-section .bbb-badge img,
+                .bbb-badge img {
+                    width: 120px;
+                }
+
+            /* Video: full width with safe padding */
+            .featured-video {
+                max-width: none;
+                margin: 8px 0;
+                padding: 0 12px;
+            }
+
+            .video-wrapper {
+                padding: 0;
+            }
+
+            .video-frame {
+                border-radius: 10px;
+                box-shadow: 0 6px 18px rgba(0,0,0,0.16);
+            }
+
+            /* About: keep typography comfy on phones
+     (support both a potential typo "bout-ccc" and "about-ccc") */
+            #about-ccc {
+                padding: 3.5rem 1rem;
+            }
+
+            .about-ccc__inner {
+                padding: 1.25rem 1.25rem;
+            }
+
+            .about-ccc__title {
+                font-size: 2rem;
+            }
+
+            .about-ccc__lead,
+            .about-ccc__body {
+                font-size: 1rem;
+                line-height: 1.6;
+            }
+
+            /* Footer: larger tap targets */
+            .ccc-footer {
+                padding: 28px 14px;
+            }
+
+            .ccc-footer-title {
+                font-size: 1.25rem;
+            }
+
+            .ccc-footer-link {
+                font-size: 1rem;
+                padding: 6px 4px;
+            }
+
+            .ccc-footer-copy {
+                font-size: 0.85rem;
+            }
+        }
+
+
+        /* Stop hero image zooming on wide screens while keeping original desktop height */
+        @media (min-width: 1100px) {
+            .hero {
+                background-size: contain; /* No zooming */
+                background-position: center;
+                background-repeat: no-repeat;
+                background-color: #000; /* looks like a natural fade behind image */
+            }
+        }
+
     </style>
 </head>
 
