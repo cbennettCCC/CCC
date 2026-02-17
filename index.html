@@ -45,27 +45,50 @@
             text-align: center;
         }
 
+
+
         .video-wrapper {
             position: relative;
             width: 100%;
-            padding-top: 56.25%; /* 16:9 ratio */
+            /* Remove the old padding-top trick */
+            padding-top: 0;
+            aspect-ratio: 16 / 9; /* <-- this sets the height cleanly */
+            max-width: 1100px; /* matches your current layout */
+            margin: 10px auto; /* keep your centering and spacing */
+            padding-left: 20px; /* preserve your side padding */
+            padding-right: 20px;
         }
 
         .video-frame {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            inset: 0; /* top/right/bottom/left: 0 */
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+            background: #000; /* avoids white flash while loading */
         }
 
             .video-frame iframe {
+                display: block; /* avoid tiny gaps in some browsers */
                 width: 100%;
                 height: 100%;
+                border: 0;
             }
+
+        /* Optional: slightly softer corners & shadow on phones only */
+        @media (max-width: 600px) {
+            .video-wrapper {
+                margin: 8px auto;
+                padding-left: 12px;
+                padding-right: 12px;
+            }
+
+            .video-frame {
+                border-radius: 10px;
+                box-shadow: 0 6px 18px rgba(0,0,0,0.16);
+            }
+        }
+
 
         body {
             margin: 0;
@@ -147,8 +170,8 @@
         }
 
         .hero h1 {
-            font-size: 42px;
-            margin-top: -300px;
+            font-size: 30px;
+            margin-top: -250px;
             font-weight: 700;
         }
 
