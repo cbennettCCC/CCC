@@ -1,499 +1,369 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Favicon: 𝕮 on construction/safety orange -->
+    <!-- Transparent favicon: orange 𝕮 -->
+    <link rel="icon" type="image/svg+xml"
+          href="data:image/svg+xml;utf8,
+    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'>
+        <text x='50%' y='50%' dominant-baseline='central' text-anchor='middle'
+              font-size='44' fill='%23FF4F00'>𝕮</text>
+    </svg>">
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Conley Concrete Construction</title>
 
-    <!-- Transparent favicon: orange 𝕮 -->
-    <link rel="icon"
-          type="image/svg+xml"
-          href="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-size='44' fill='%23FF4F00'%3E%F0%9D%95%AE%3C/text%3E%3C/svg%3E" />
-
     <style>
-        /* ---------------------- Base / Resets ---------------------- */
-        :root {
-            --construction-orange: #cf4a1b;
-            --footer-bg: #1a1a1a;
-            --footer-text: #e6e6e6;
-            --bg-image: url('https://images.unsplash.com/photo-1523419409543-3f3b9a1b5f7f?q=80&w=1600&auto=format&fit=crop');
-            --text-on-dark: #ffffff;
-            --card-bg: rgba(0,0,0,0.45);
-            --card-border: rgba(255,255,255,0.18);
-            --container: 1100px;
-            --radius: 14px;
-            --shadow: 0 8px 24px rgba(0,0,0,.15);
+        /* New BBB section styling */
+        .bbb-section {
+            padding: 15px 0;
+            text-align: center;
         }
 
-        * {
-            box-sizing: border-box
+            .bbb-section .bbb-badge img {
+                width: 160px; /* slightly larger since it has its own space */
+                height: auto;
+                border: 0;
+            }
+
+        @media (max-width: 600px) {
+            .bbb-section .bbb-badge img {
+                width: 120px;
+            }
         }
 
-        html, body {
-            height: 100%
+            .bbb-badge img {
+                width: 140px; /* adjust size if needed */
+                height: auto;
+                border: 0;
+            }
+
+        @media (max-width: 600px) {
+            .bbb-badge img {
+                width: 110px;
+            }
         }
+
+        .featured-video {
+            max-width: 1100px;
+            margin: 10px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%; /* 16:9 ratio */
+        }
+
+        .video-frame {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        }
+
+            .video-frame iframe {
+                width: 100%;
+                height: 100%;
+            }
 
         body {
             margin: 0;
-            font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-            background: #f4f4f4;
-            color: #222;
-            line-height: 1.5;
-            -webkit-text-size-adjust: 100%;
-            text-size-adjust: 100%;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
         }
 
-        a {
-            color: inherit
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block
-        }
-
-        .container {
-            width: 100%;
-            max-width: var(--container);
-            margin: 0 auto;
-            padding-inline: clamp(16px, 3vw, 24px);
-        }
-
-        /* ---------------------- Utilities ---------------------- */
-        .visually-hidden {
-            position: absolute !important;
-            height: 1px;
-            width: 1px;
-            overflow: hidden;
-            clip: rect(1px,1px,1px,1px);
-            white-space: nowrap;
-        }
-
-        .skip-link {
-            position: absolute;
-            left: -999px;
-            top: auto;
-            background: #fff;
-            color: #000;
-            padding: 8px 12px;
-            border-radius: 6px;
-        }
-
-            .skip-link:focus {
-                left: 12px;
-                top: 12px;
-                z-index: 1000
-            }
-
-        /* ---------------------- Banner ---------------------- */
         .wip-banner {
             background: #ffcc00;
             color: #222;
             text-align: center;
-            padding: 12px 8px;
-            font-size: clamp(15px,2.8vw,18px);
-            font-weight: 700;
+            padding: 12px 0;
+            font-size: 18px;
+            font-weight: bold;
             border-bottom: 3px solid #222;
         }
 
-        /* ---------------------- Header / Nav ---------------------- */
+        /* NAVIGATION */
         header {
-            background: #fff;
-            position: sticky;
-            top: 0;
-            z-index: 50;
-            border-bottom: 1px solid #e9e9e9;
-        }
-
-        .header-inner {
+            background-color: #ffffff;
+            padding: 25px 0;
+            text-align: center;
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: space-between;
-            padding-block: 10px;
         }
 
+        /* Bigger centered logo */
         .logo img {
-            height: clamp(48px,8vw,80px); /* smaller on mobile, grows on desktop */
+            height: 200px; /* adjust size as needed */
             width: auto;
+            margin-bottom: 15px;
         }
 
-        /* Desktop nav */
+        /* Centered nav menu */
         nav {
             display: flex;
-            gap: 28px
+            gap: 30px;
         }
 
             nav a {
-                text-decoration: none;
                 color: #222;
-                font-weight: 600;
-                font-size: 16px;
-                line-height: 1;
-                padding: 10px 4px;
+                text-decoration: none;
+                font-size: 18px;
+                font-weight: 500;
             }
 
                 nav a:hover {
-                    text-decoration: underline
+                    text-decoration: underline;
                 }
 
-        /* Mobile hamburger */
-        .nav-toggle {
-            display: none;
-            background: none;
-            border: 0;
-            padding: 8px;
-            margin-left: 8px;
-        }
 
-            .nav-toggle svg {
-                display: block
-            }
-
-        .mobile-nav {
-            display: none;
-            flex-direction: column;
-            gap: 8px;
-            padding: 8px 0
-        }
-
-            .mobile-nav a {
-                padding: 10px 12px;
-                border-radius: 8px;
-                background: #f7f7f7;
-                font-weight: 600;
-                text-decoration: none;
-            }
-
-        /* Show/hide with CSS only */
-        #nav-check {
-            display: none
-        }
-
-            #nav-check:checked ~ .mobile-nav {
-                display: flex
-            }
-
-        /* ---------------------- Hero ---------------------- */
+        /* HERO SECTION */
         .hero {
-            position: relative;
-            min-height: 55vh;
-            display: grid;
-            place-items: center;
-            text-align: center;
-            color: #fff;
             background: url('assets/vanwinkle.jpg') center/cover no-repeat;
-            padding: 40px 16px;
+            height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 20px;
+            position: relative;
         }
 
-            .hero::before {
-                /* soft overlay for contrast */
-                content: "";
-                position: absolute;
-                inset: 0;
-                background: linear-gradient(to bottom, rgba(0,0,0,.35), rgba(0,0,0,.45));
-            }
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
 
         .hero-content {
             position: relative;
-            z-index: 1;
-            max-width: 800px
+            z-index: 2;
+            max-width: 800px;
         }
 
         .hero h1 {
-            margin: 0;
-            font-size: clamp(24px, 4.8vw + 8px, 46px);
-            font-weight: 800;
-            letter-spacing: .2px;
-            text-wrap: balance;
+            font-size: 42px;
+            margin-top: -300px;
+            font-weight: 700;
         }
 
-        /* ---------------------- BBB Section ---------------------- */
-        .bbb-section {
-            padding: 22px 0;
-            text-align: center;
-            background: transparent;
+
+
+
+        :root {
+            --construction-orange: #cf4a1b;
+            --footer-bg: #1a1a1a;
+            --footer-text: #e6e6e6;
         }
 
-        .bbb-badge img {
-            width: clamp(120px, 22vw, 180px);
-            height: auto;
-            border: 0;
-            margin-inline: auto;
-            filter: drop-shadow(0 2px 6px rgba(0,0,0,.15));
-        }
-
-        /* ---------------------- Featured Video ---------------------- */
-        .featured-video {
-            padding: 8px 0
-        }
-
-        .video-wrapper {
-            max-width: var(--container);
-            margin: 10px auto;
-            padding: 0 16px
-        }
-
-        .video-frame {
-            position: relative;
-            width: 100%;
-            padding-top: 56.25%;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            background: #000;
-        }
-
-            .video-frame iframe {
-                position: absolute;
-                inset: 0;
-                width: 100%;
-                height: 100%;
-                border: 0
-            }
-
-        /* ---------------------- About ---------------------- */
-        .about-ccc {
-            position: relative;
-            color: var(--text-on-dark);
-            padding: clamp(48px, 8vw, 96px) 0;
-            background: var(--bg-image) center/cover no-repeat;
-            isolation: isolate;
-        }
-
-            .about-ccc::before {
-                content: "";
-                position: absolute;
-                inset: 0;
-                background: rgba(0,0,0,.25);
-                z-index: 0;
-            }
-
-        .about-ccc__inner {
-            position: relative;
-            z-index: 1;
-            max-width: 800px;
-            margin: auto;
-            text-align: center;
-            background: var(--card-bg);
-            padding: clamp(20px,4vw,40px) clamp(20px,4vw,44px);
-            border-radius: var(--radius);
-            backdrop-filter: blur(6px);
-            border: 1px solid var(--card-border);
-        }
-
-        .about-ccc__title {
-            font-size: clamp(28px, 5vw, 48px);
-            color: #fff;
-            margin: 0 0 12px;
-        }
-
-        .orange-ccc {
-            color: var(--construction-orange);
-            text-shadow: 0 2px 8px rgba(0,0,0,.4)
-        }
-
-        .about-ccc__lead, .about-ccc__body {
-            font-size: clamp(16px,2.1vw,18px);
-            line-height: 1.65;
-            color: #f1f1f1;
-            margin: 0 0 14px;
-            text-wrap: pretty;
-        }
-
-        /* ---------------------- Footer ---------------------- */
         .ccc-footer {
             background: var(--footer-bg);
             color: var(--footer-text);
-            padding: 32px 16px;
-            margin-top: 36px;
+            padding: 2.5rem 1rem;
             text-align: center;
+            margin-top: 3rem;
         }
 
         .ccc-footer-title {
-            font-size: clamp(18px,3vw,24px);
-            font-weight: 800;
+            font-size: 1.5rem;
+            font-weight: 700;
             color: var(--construction-orange);
-            margin: 0 0 8px;
+            margin-bottom: 0.5rem;
         }
 
         .ccc-footer-contact {
             display: flex;
             flex-direction: column;
-            gap: 6px;
-            margin: 10px 0 16px;
+            gap: 0.4rem;
+            margin: 0.75rem 0 1.25rem;
         }
 
         .ccc-footer-link {
             color: var(--footer-text);
             text-decoration: none;
-            font-size: clamp(15px,2.2vw,17px);
+            font-size: 1.05rem;
+            transition: color 0.2s ease;
         }
 
             .ccc-footer-link:hover {
-                color: var(--construction-orange)
+                color: var(--construction-orange);
             }
 
         .ccc-footer-copy {
-            font-size: 13px;
-            opacity: .75;
-            margin-top: 8px
+            font-size: 0.9rem;
+            opacity: 0.7;
         }
 
+
+        :root {
+            --construction-orange: #cf4a1b; /* C.C.C. orange */
+            --bg-image: url('https://images.unsplash.com/photo-1523419409543-3f3b9a1b5f7f?q=80&w=1600&auto=format&fit=crop');
+            --text-on-dark: #ffffff;
+            --card-bg: rgba(0,0,0,0.45);
+            --card-border: rgba(255,255,255,0.18);
+        }
+
+        .about-ccc {
+            position: relative;
+            color: var(--text-on-dark);
+            padding: 6rem 1.25rem;
+            background: var(--bg-image) center/cover no-repeat;
+        }
+
+
+        .about-ccc__inner {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+            background: var(--card-bg);
+            padding: 2rem 2.5rem;
+            border-radius: 14px;
+            backdrop-filter: blur(6px);
+            border: 1px solid var(--card-border);
+        }
+
+        .about-ccc__title {
+            font-size: 3rem;
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+
+        /* Old English style */
+        /*.blackletter {
+            font-family: "UnifrakturCook", serif;
+            font-weight: 700;
+        }*/
+
+        /* Construction orange C.C.C. */
+        .orange-ccc {
+            color: var(--construction-orange);
+            text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+        }
+
+        .about-ccc__lead,
+        .about-ccc__body {
+            font-size: 1.125rem;
+            line-height: 1.65;
+            color: #f1f1f1;
+        }
+
+
         .ccc-footer-social {
-            margin-top: 12px;
+            margin-top: 15px;
             display: flex;
             gap: 18px;
-            justify-content: center
+            justify-content: center;
         }
 
         .social-icon svg {
             color: var(--construction-orange);
-            transition: transform .2s ease, filter .2s ease;
+            transition: 0.2s ease-in-out;
         }
 
-        .social-icon:focus-visible svg,
         .social-icon:hover svg {
-            transform: scale(1.12);
+            transform: scale(1.15);
             filter: drop-shadow(0 0 6px var(--construction-orange));
-        }
-
-        /* ---------------------- Responsive Nav Breakpoint ---------------------- */
-        @media (max-width: 840px) {
-            nav {
-                display: none
-            }
-            /* hide desktop links */
-            .nav-toggle {
-                display: block
-            }
-            /* show hamburger */
-
-            .header-inner {
-                padding-block: 8px;
-            }
-        }
-
-        /* ---------------------- Motion preferences ---------------------- */
-        @media (prefers-reduced-motion: reduce) {
-            * {
-                scroll-behavior: auto
-            }
-
-            .social-icon svg {
-                transition: none
-            }
         }
     </style>
 </head>
 
 <body>
-    <a class="skip-link" href="#main">Skip to content</a>
-
     <div class="wip-banner">
-        🚧 This website is a work in progress — expected completion date: 3‑1‑26 • Email <a href="mailto:info@conleycc.com">info@conleycc.com</a> or call <a href="tel:3093680143">309‑368‑0143</a> to get on our summer list! 🚧
+        🚧 This website is a work in progress — expected completion date: 3‑1‑26  Email info@conleycc.com or call 309-368-0143 to get on our summer list! 🚧
     </div>
 
-    <!-- HEADER / NAV -->
+
+    <!-- NAVIGATION -->
     <header>
-        <div class="container header-inner">
-            <div class="logo">
-                <img src="assets/CCCLogoTransBG.svg" alt="Conley Concrete Construction logo" />
-            </div>
-
-            <!-- Desktop nav -->
-            <nav aria-label="Primary">
-                <a href="#">HOME</a>
-                <a href="#">CONCRETE</a>
-                <a href="#">CONSTRUCTION</a>
-                <a href="#">TRUCKING</a>
-                <a href="#">PHOTO GALLERY</a>
-            </nav>
-
-            <!-- Mobile menu toggle (CSS-only) -->
-            <label for="nav-check" class="nav-toggle" aria-label="Open menu" role="button" aria-controls="mobile-menu" aria-expanded="false">
-                <svg width="30" height="30" viewBox="0 0 24 24" fill="#222" aria-hidden="true">
-                    <path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z" />
-                </svg>
-            </label>
-            <input type="checkbox" id="nav-check" aria-hidden="true" />
+        <div class="logo">
+            <img src="assets/CCCLogoTransBG.svg" alt="Conley Concrete Construction Logo">
         </div>
 
-        <!-- Mobile nav links -->
-        <div id="mobile-menu" class="container mobile-nav" role="navigation" aria-label="Mobile">
+        <nav>
             <a href="#">HOME</a>
             <a href="#">CONCRETE</a>
             <a href="#">CONSTRUCTION</a>
             <a href="#">TRUCKING</a>
             <a href="#">PHOTO GALLERY</a>
-        </div>
+        </nav>
     </header>
 
-    <main id="main">
-        <!-- HERO -->
-        <section class="hero" role="banner" aria-label="Hero image">
-            <div class="hero-content container">
-                <h1>Concrete, Post‑Frame Construction, and Trucking Services from a name you can trust.</h1>
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <h1>Concrete, Post-Frame Construction, and Trucking Services from a name you can trust.</h1>
+        </div>
+
+
+    </section>
+    <section id="bbb-section" class="bbb-section">
+        <div class="container">
+            <div class="bbb-badge">
+                <a href="https://www.bbb.org/us/il/knoxville/profile/concrete-contractors/conley-concrete-construction-ccc-0724-1000010063/#sealclick"
+                   target="_blank"
+                   rel="nofollow">
+                    <img src="https://seal-heartofillinois.bbb.org/seals/blue-seal-200-130-bbb-1000010063.png"
+                         alt="Conley Concrete & Construction - CCC BBB Business Review" />
+                </a>
             </div>
-        </section>
-
-        <!-- BBB -->
-        <section id="bbb-section" class="bbb-section" aria-label="BBB accreditation">
-            <div class="container">
-                <div class="bbb-badge">
-                    <a href="https://www.bbb.org/us/il/knoxville/profile/concrete-contractors/conley-concrete-construction-ccc-0724-1000010063/#sealclick"
-                       target="_blank" rel="nofollow noopener">
-                        <img src="https://seal-heartofillinois.bbb.org/seals/blue-seal-200-130-bbb-1000010063.png"
-                             alt="Conley Concrete &amp; Construction - CCC BBB Business Review"
-                             width="200" height="130"
-                             loading="lazy" />
-                    </a>
-                </div>
+        </div>
+    </section>
+    <section class="featured-video">
+        <div class="video-wrapper">
+            <div class="video-frame">
+                <iframe src="https://player.vimeo.com/video/947087392?h=share&title=0&byline=0&portrait=0"
+                        frameborder="0"
+                        allow="autoplay; fullscreen; picture-in-picture"
+                        allowfullscreen>
+                </iframe>
             </div>
-        </section>
+        </div>
 
-        <!-- VIDEO -->
-        <section class="featured-video" aria-label="Featured video">
-            <div class="video-wrapper">
-                <div class="video-frame">
-                    <iframe src="https://player.vimeo.com/video/947087392?h=share&title=0&byline=0&portrait=0"
-                            allow="autoplay; fullscreen; picture-in-picture"
-                            allowfullscreen
-                            title="Conley Concrete Construction overview video">
-                    </iframe>
-                </div>
-            </div>
-        </section>
+    </section>
 
-        <!-- ABOUT -->
-        <section id="about-ccc" class="about-ccc">
-            <div class="container">
-                <div class="about-ccc__inner" role="region" aria-labelledby="about-ccc-title">
-                    <h2 id="about-ccc-title" class="about-ccc__title">
-                        About <span class="orange-ccc">𝕮.𝕮.𝕮</span>
-                    </h2>
 
-                    <p class="about-ccc__lead">
-                        Conley Concrete &amp; Construction began operations in 2007. We specialize in
-                        residential, commercial, industrial, and agricultural concrete flatwork and wall work,
-                        decorative concrete, post‑frame construction as an authorized Wick Buildings dealer,
-                        excavation, and trucking.
-                    </p>
+    <section id="about-ccc" class="bout-ccc">
+        <div class="about-ccc__overlay"></div>
 
-                    <p class="about-ccc__body">
-                        Every project is driven by our commitment to safety, schedule, and craftsmanship.
-                        From foundations and slabs to decorative finishes and full post‑frame builds, our team
-                        delivers durable, high‑quality results built to last. Please consider us for your next
-                        concrete or construction project.
-                    </p>
-                </div>
-            </div>
-        </section>
-    </main>
+        <div class="about-ccc__inner" role="region" aria-labelledby="about-ccc-title">
+            <h2 id="about-ccc-title" class="about-ccc__title">
+                About <span class="blackletter orange-ccc">𝕮.𝕮.𝕮</span>
+            </h2>
 
-    <!-- FOOTER -->
+            <p class="about-ccc__lead">
+                Conley Concrete &amp; Construction began operations in 2007. We specialize in
+                residential, commercial, industrial, and agricultural concrete flatwork and wall work,
+                decorative concrete, post‑frame construction as an authorized Wick Buildings dealer,
+                excavation, and trucking.
+            </p>
+
+            <p class="about-ccc__body">
+                Every project is driven by our commitment to safety, schedule, and craftsmanship.
+                From foundations and slabs to decorative finishes and full post‑frame builds, our team
+                delivers durable, high‑quality results built to last. Please consider us for your next
+                concrete or construction project.
+            </p>
+        </div>
+    </section>
+
+
     <footer class="ccc-footer">
-        <div class="container ccc-footer-inner">
+        <div class="ccc-footer-inner">
             <p class="ccc-footer-title">Conley Concrete &amp; Construction</p>
 
             <div class="ccc-footer-contact">
@@ -501,16 +371,25 @@
                 <a href="tel:3093680143" class="ccc-footer-link">309‑368‑0143</a>
             </div>
 
+            <!-- Social Icons -->
             <div class="ccc-footer-social">
-                <a href="https://www.facebook.com/ConleyConcrete" class="social-icon" target="_blank" aria-label="Facebook" rel="noopener">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                        <path d="M22 12a10 10 0 1 0-11.5 9.9v-7H8v-3h2.5V9.5c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4H15c-1.2 0-1.6.8-1.6 1.6V12H17l-.4 3h-2.8v7A10 10 0 0 0 22 12z" />
+                <a href="https://www.facebook.com/ConleyConcrete" class="social-icon" target="_blank" aria-label="Facebook">
+                    <!-- Facebook SVG -->
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M22 12a10 10 0 1 0-11.5 9.9v-7H8v-3h2.5V9.5c0-2.5 1.5-3.9 3.8-3.9
+                    1.1 0 2.2.2 2.2.2v2.4H15c-1.2 0-1.6.8-1.6 1.6V12H17l-.4 3h-2.8v7A10 10 0 0 0 22 12z" />
                     </svg>
                 </a>
 
-                <a href="https://www.instagram.com/conley_concrete_construction/" class="social-icon" target="_blank" aria-label="Instagram" rel="noopener">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                        <path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm10 2c1.7 0 3 1.3 3 3v10c0 1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3V7c0-1.7 1.3-3 3-3h10zm-5 3.3A4.8 4.8 0 1 0 16.8 12 4.8 4.8 0 0 0 12 7.3zm0 7.8A3 3 0 1 1 15 12a3 3 0 0 1-3 3zm4.9-8.9a1.1 1.1 0 1 0 1.1 1.1 1.1 1.1 0 0 0-1.1-1.1z" />
+                <a href="https://www.instagram.com/conley_concrete_construction/" class="social-icon" target="_blank" aria-label="Instagram">
+                    <!-- Instagram SVG -->
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2
+                    5-5V7c0-2.8-2.2-5-5-5H7zm10 2c1.7 0 3 1.3 3 3v10c0
+                    1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3V7c0-1.7 1.3-3 3-3h10zm-5
+                    3.3A4.8 4.8 0 1 0 16.8 12 4.8 4.8 0 0 0 12 7.3zm0 7.8A3
+                    3 0 1 1 15 12a3 3 0 0 1-3 3zm4.9-8.9a1.1 1.1 0 1 0
+                    1.1 1.1 1.1 1.1 0 0 0-1.1-1.1z" />
                     </svg>
                 </a>
             </div>
@@ -518,5 +397,14 @@
             <p class="ccc-footer-copy">© 2026 Conley Concrete &amp; Construction. All rights reserved.</p>
         </div>
     </footer>
+
+
+
 </body>
+
+
+
 </html>
+
+
+
